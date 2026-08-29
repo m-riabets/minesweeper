@@ -5,8 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Minesweeper"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Minesweeper"
+        WindowStartupLocation="CenterScreen"
+        SizeToContent="WidthAndHeight">
+        
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center">
+            <TextBlock>
+                Choose Difficulty Level
+            </TextBlock>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="1" x:Name="DifficultyPanel" Orientation="Horizontal" HorizontalAlignment="Center"/>
     </Grid>
 </Window>

@@ -1,0 +1,22 @@
+﻿<Window x:Class="Minesweeper.GameWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:Minesweeper"
+        mc:Ignorable="d"
+        SizeToContent="WidthAndHeight"
+        ResizeMode="CanMinimize">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="10">
+            <TextBlock Text="Time: " />
+            <TextBlock x:Name="TimerText" Text="00:00:00" Margin="0,0,20,0"/>
+            <TextBlock Text="Mines left: "/>
+            <TextBlock x:Name="MinesLeftText" Text="0"/>
+        </StackPanel>
+
+        <ScrollViewer x:Name="BoardScrollViewer" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <Grid x:Name="BoardGrid" Margin="10"/>
+        </ScrollViewer>
+    </DockPanel>
+</Window>
