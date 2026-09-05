@@ -6,17 +6,47 @@
         xmlns:local="clr-namespace:Minesweeper"
         mc:Ignorable="d"
         SizeToContent="WidthAndHeight"
-        ResizeMode="CanMinimize">
-    <DockPanel>
-        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="10">
-            <TextBlock Text="Time: " />
-            <TextBlock x:Name="TimerText" Text="00:00:00" Margin="0,0,20,0"/>
-            <TextBlock Text="Mines left: "/>
-            <TextBlock x:Name="MinesLeftText" Text="0"/>
-        </StackPanel>
+        ResizeMode="CanResize"
+        MinWidth="200"
+        MinHeight="150"
+        Background="#C0C0C0">
+    <Viewbox Stretch="Uniform" RenderOptions.BitmapScalingMode="NearestNeighbor">
+        <Border BorderBrush="White" BorderThickness="2,2,0,0" Padding="0">
+            <Border BorderBrush="#808080" BorderThickness="0,0,2,2" Padding="8">
+                <DockPanel Background="#C0C0C0">
+                    <Grid DockPanel.Dock="Top" Margin="0,0,0,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
 
-        <ScrollViewer x:Name="BoardScrollViewer" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-            <Grid x:Name="BoardGrid" Margin="10"/>
-        </ScrollViewer>
-    </DockPanel>
+                        <Border Grid.Column="0" HorizontalAlignment="Left" BorderBrush="#808080" BorderThickness="2,2,0,0">
+                            <Border BorderBrush="White" BorderThickness="0,0,2,2">
+                                <local:DigitCounter x:Name="TimerCounter"/>
+                            </Border>
+                        </Border>
+
+                        <Button x:Name="NewGameButton" Grid.Column="1" Width="24" Height="24"
+                                Padding="0" BorderThickness="0" Background="Transparent" Style="{x:Null}"
+                                Click="NewGameButton_Click" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Image x:Name="FaceImage" Width="24" Height="24" Stretch="None"/>
+                        </Button>
+
+                        <Border Grid.Column="2" HorizontalAlignment="Right" BorderBrush="#808080" BorderThickness="2,2,0,0">
+                            <Border BorderBrush="White" BorderThickness="0,0,2,2">
+                                <local:DigitCounter x:Name="MinesLeftCounter"/>
+                            </Border>
+                        </Border>
+                    </Grid>
+
+                    <Border BorderBrush="#808080" BorderThickness="2,2,0,0">
+                        <Border BorderBrush="White" BorderThickness="0,0,2,2">
+                            <Grid x:Name="BoardGrid" Background="#C0C0C0" HorizontalAlignment="Center"/>
+                        </Border>
+                    </Border>
+                </DockPanel>
+            </Border>
+        </Border>
+    </Viewbox>
 </Window>

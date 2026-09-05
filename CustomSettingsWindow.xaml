@@ -1,0 +1,43 @@
+<Window x:Class="Minesweeper.CustomSettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:Minesweeper"
+        mc:Ignorable="d"
+        Title="Minesweeper"
+        WindowStartupLocation="CenterOwner"
+        SizeToContent="WidthAndHeight"
+        ResizeMode="NoResize">
+    <StackPanel Margin="15">
+        <TextBlock Text="Custom Game" FontWeight="Bold" Margin="0,0,0,10" HorizontalAlignment="Center"/>
+
+        <Grid Margin="0,0,0,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Rows:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
+            <TextBox x:Name="RowsTextBox" Grid.Row="0" Grid.Column="1" Margin="0,3"/>
+
+            <TextBlock Text="Columns:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
+            <TextBox x:Name="ColumnsTextBox" Grid.Row="1" Grid.Column="1" Margin="0,3"/>
+
+            <TextBlock Text="Mines:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"/>
+            <TextBox x:Name="MinesTextBox" Grid.Row="2" Grid.Column="1" Margin="0,3"/>
+        </Grid>
+
+        <TextBlock x:Name="ErrorText" Foreground="Red" TextWrapping="Wrap" MaxWidth="220" Margin="0,5"/>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+            <Button x:Name="OkButton" Content="OK" Width="80" Height="30" Margin="5" Click="OkButton_Click"/>
+            <Button x:Name="CancelButton" Content="Cancel" Width="80" Height="30" Margin="5" Click="CancelButton_Click"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

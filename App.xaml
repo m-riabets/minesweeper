@@ -4,6 +4,37 @@
              xmlns:local="clr-namespace:Minesweeper"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        
+        <Style TargetType="Window">
+            <Setter Property="Background" Value="#C0C0C0"/>
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#C0C0C0"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Padding" Value="6,3"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="OuterBorder" BorderBrush="White" BorderThickness="2,2,0,0">
+                            <Border x:Name="InnerBorder" BorderBrush="#808080" BorderThickness="0,0,2,2">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"
+                                                       Margin="{TemplateBinding Padding}"/>
+                                </Border>
+                            </Border>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="OuterBorder" Property="BorderBrush" Value="#808080"/>
+                                <Setter TargetName="InnerBorder" Property="BorderBrush" Value="White"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Foreground" Value="#808080"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Application.Resources>
 </Application>

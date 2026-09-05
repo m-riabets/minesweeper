@@ -74,13 +74,14 @@ public partial class MainWindow : Window
 
     private void StartGame(GameSettings settings)
     {
-        var gameWindow = new GameWindow(settings);
+        var gameWindow = new GameWindow(settings) { Owner = this };
         gameWindow.Show();
         this.Hide();
     }
 
     private GameSettings? ShowCustomSettingsDialog()
     {
-        return null;
+        var dialog = new CustomSettingsWindow { Owner = this };
+        return dialog.ShowDialog() == true ? dialog.Result : null;
     }
 }
