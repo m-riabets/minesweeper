@@ -1,5 +1,4 @@
 using System.Windows;
-using System.Windows.Media.Imaging;
 
 namespace Minesweeper;
 
@@ -10,7 +9,7 @@ public partial class GameOverWindow : Window
         InitializeComponent();
 
         Title = "Minesweeper";
-        Icon = new BitmapImage(new Uri("pack://application:,,,/Assets/Tiles/Mine.png", UriKind.Absolute));
+        Icon = Assets.AppIcon;
 
         MessageText.Text = won ? "You Win!" : "You Lose!";
         TimeText.Text = $"Time: {elapsed:hh\\:mm\\:ss}";

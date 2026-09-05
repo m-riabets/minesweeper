@@ -1,5 +1,4 @@
 using System.Windows;
-using System.Windows.Media.Imaging;
 using Minesweeper.Game;
 
 namespace Minesweeper;
@@ -13,7 +12,7 @@ public partial class CustomSettingsWindow : Window
         InitializeComponent();
 
         Title = "Minesweeper";
-        Icon = new BitmapImage(new Uri("pack://application:,,,/Assets/Tiles/Mine.png", UriKind.Absolute));
+        Icon = Assets.AppIcon;
 
         RowsTextBox.Text = "16";
         ColumnsTextBox.Text = "16";

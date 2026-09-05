@@ -5,7 +5,6 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Minesweeper.Game;
@@ -22,7 +21,7 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
         Name = "Minesweeper";
-        Icon = new BitmapImage(new Uri("pack://application:,,,/Assets/Tiles/Mine.png", UriKind.Absolute));
+        Icon = Assets.AppIcon;
         CreateDifficultyButtons();
     }
 

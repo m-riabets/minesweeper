@@ -26,7 +26,7 @@ public partial class GameWindow : Window
         this.settings = settings;
 
         Title = "Minesweeper";
-        Icon = new BitmapImage(new Uri("pack://application:,,,/Assets/Tiles/Mine.png", UriKind.Absolute));
+        Icon = Assets.AppIcon;
         MinesLeftCounter.Display(this.settings.Mines);
         SetFace("HappyFace");
 
